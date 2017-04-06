@@ -1,5 +1,8 @@
 package com.eli.jdk8;
 
+import javax.swing.plaf.ListUI;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -8,7 +11,8 @@ import java.util.stream.Stream;
  * 常用的流操作，包括
  * 1.collect(toList())
  * 2,map
- * 3,filter
+ * 3,filter 过滤
+ * 4,flatmap 可用Stream替换值，然后将多个Stream连接成一个Stream
  */
 public class CommonStream {
     public static void main(String[] args) {
@@ -27,6 +31,10 @@ public class CommonStream {
 
         System.out.println("=============");
 
+        List<String> flatMap = Stream.of(Arrays.asList("1","2"), Arrays.asList("3","4")).flatMap(string -> string.stream()).collect(Collectors.toList());
+        System.out.println(flatMap);
+        
+        System.out.println("=============");
 
     }
 
