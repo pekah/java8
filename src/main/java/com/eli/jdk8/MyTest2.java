@@ -38,6 +38,11 @@ public class MyTest2 {
         MyInterface2 myInterface2 = () -> {
             System.out.println("hello");
         };
+        myInterface2.test();
+
+        System.out.println(myInterface2.getClass());
+        System.out.println(myInterface2.getClass().getSuperclass());
+        System.out.println(myInterface2.getClass().getInterfaces()[0]);
 
 
     }
