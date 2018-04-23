@@ -36,4 +36,16 @@ public class Person {
                 ", age=" + age +
                 '}';
     }
+
+    public static int compareByAge(Person p1, Person p2){
+        return p1.getAge() - p2.getAge();
+    }
+
+    public int compareByInputAge(Person p){
+        return this.age - p.getAge();
+    }
+
+    public int compareByInputName(Person p){
+        return this.name.compareToIgnoreCase(p.getName());
+    }
 }
