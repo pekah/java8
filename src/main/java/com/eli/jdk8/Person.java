@@ -29,6 +29,14 @@ public class Person {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
     public static int compareByAge(Person p1, Person p2){
         return p1.getAge() - p2.getAge();
     }

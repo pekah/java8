@@ -35,7 +35,7 @@ public class PersonTest {
 
     public List<Person> getPersonByAge(int age, List<Person> persons){
         BiFunction<Integer, List<Person>, List<Person>> biFunction = (myAge, myPersons) -> {
-            return myPersons.stream().filter(p -> p.getAge() == age).collect(Collectors.toList());
+            return myPersons.parallelStream().filter(p -> p.getAge() == age).collect(Collectors.toList());
         };
 
         return biFunction.apply(age, persons);
